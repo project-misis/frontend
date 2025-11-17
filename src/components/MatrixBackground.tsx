@@ -1,7 +1,17 @@
 import { useEffect, useRef } from 'react';
 
+const hexToRgba = (hex: string, alpha: number) => {
+  const sanitized = hex.replace('#', '');
+  const bigint = parseInt(sanitized, 16);
+  const r = (bigint >> 16) & 255;
+  const g = (bigint >> 8) & 255;
+  const b = bigint & 255;
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+};
+
 export const MatrixBackground = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const glowCacheRef = useRef<Map<string, HTMLCanvasElement>>(new Map());
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -104,6 +114,47 @@ export const MatrixBackground = () => {
     let lastTs = performance.now();
     let rafId = 0 as number;
 
+    const getGlowSprite = (color: string, scale: number) => {
+      const dpr = window.devicePixelRatio || 1;
+      const bucketedScale = Math.round(scale * 10) / 10;
+      const key = `${color}-${bucketedScale}`;
+      const glowCache = glowCacheRef.current;
+
+      if (glowCache.has(key)) {
+        return glowCache.get(key)!;
+      }
+
+      const baseSize = cellSize * 3.2 * bucketedScale;
+      const spriteCanvas = document.createElement('canvas');
+      spriteCanvas.width = baseSize * dpr;
+      spriteCanvas.height = baseSize * dpr;
+
+      const spriteCtx = spriteCanvas.getContext('2d');
+      if (spriteCtx) {
+        spriteCtx.scale(dpr, dpr);
+
+        const radius = baseSize / 2;
+        const gradient = spriteCtx.createRadialGradient(
+          radius,
+          radius,
+          radius * 0.2,
+          radius,
+          radius,
+          radius
+        );
+
+        gradient.addColorStop(0, hexToRgba(color, 0.6));
+        gradient.addColorStop(0.4, hexToRgba(color, 0.28));
+        gradient.addColorStop(1, hexToRgba(color, 0));
+
+        spriteCtx.fillStyle = gradient;
+        spriteCtx.fillRect(0, 0, baseSize, baseSize);
+      }
+
+      glowCache.set(key, spriteCanvas);
+      return spriteCanvas;
+    };
+
     const drawFrame = (ts: number) => {
       const dt = Math.min(0.05, (ts - lastTs) / 1000);
       lastTs = ts;
@@ -140,24 +191,17 @@ export const MatrixBackground = () => {
         }
 
         const baseSize = cellSize * s.scale;
-        // Larger circles: increase size multiplier noticeably
-        const drawSize = baseSize * (1.6 + 0.2 * alpha);
+        const sprite = getGlowSprite(s.color, s.scale);
         const centerX = s.x * cellSize + cellSize / 2;
         const centerY = s.y * cellSize + cellSize / 2;
-        const radius = drawSize / 2;
+        const sizeMultiplier = isMobileViewport ? 2.05 : 1.8;
+        const drawSize = baseSize * sizeMultiplier * (1 + 0.15 * alpha);
 
-        // Stronger blur for softer glow, tuned for mobile & high-DPI screens
+        ctx.save();
         ctx.globalAlpha = alpha;
-        const blurBase = Math.min(24, Math.max(8, radius * 1.4));
-        const blurAmount = isMobileViewport ? blurBase + 4 : blurBase;
-        ctx.filter = `blur(${blurAmount}px)`;
-        ctx.fillStyle = s.color;
-        ctx.beginPath();
-        ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
-        ctx.fill();
-
-        ctx.filter = 'none';
-        ctx.globalAlpha = 1;
+        ctx.globalCompositeOperation = 'lighter';
+        ctx.drawImage(sprite, centerX - drawSize / 2, centerY - drawSize / 2, drawSize, drawSize);
+        ctx.restore();
       }
 
       while (sparks.length < MAX_ACTIVE) spawnSpark();
@@ -181,6 +225,7 @@ export const MatrixBackground = () => {
       cancelAnimationFrame(rafId);
       clearInterval(clearIntervalId);
       window.removeEventListener('resize', handleResize);
+      glowCacheRef.current.clear();
     };
   }, []);
 
