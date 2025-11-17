@@ -1,0 +1,138 @@
+{
+  "hero": {
+    "badge": "Global Mentorship Network",
+    "titlePart1": "Connect with",
+    "titleHighlight": "mentors",
+    "titlePart2": "from around the world",
+    "description": "Bridge cultures, share knowledge, and grow together. Our platform connects international students with experienced mentors across borders.",
+    "findMentor": "Find a Mentor",
+    "becomeMentor": "Become a Mentor",
+    "viewProfile": "View Profile",
+    "countries": "Countries",
+    "mentors": "Mentors",
+    "students": "Students"
+  },
+  "features": {
+    "titlePart1": "Everything you need to",
+    "titleHighlight": "succeed",
+    "subtitle": "Powerful features designed to make mentorship effective and accessible",
+    "realTimeChat": {
+      "title": "Real-time Chat",
+      "description": "Connect instantly with mentors through our secure messaging platform."
+    },
+    "videoSessions": {
+      "title": "Video Sessions",
+      "description": "Schedule and join video calls for face-to-face mentorship sessions."
+    },
+    "resourceLibrary": {
+      "title": "Resource Library",
+      "description": "Access curated learning materials and guides from experienced mentors."
+    },
+    "achievementTracking": {
+      "title": "Achievement Tracking",
+      "description": "Monitor your progress and celebrate milestones with your mentor."
+    }
+  },
+  "notFound": {
+    "title": "404",
+    "message": "Oops! Page not found",
+    "returnHome": "Return to Home"
+  },
+  "auth": {
+    "title": "Welcome, {{role}}",
+    "subtitle": "Log in or create an account to continue",
+    "tabs": {
+      "login": "Log in",
+      "signup": "Sign up"
+    },
+    "fields": {
+      "fullName": "Full Name",
+      "email": "Email",
+      "password": "Password",
+      "avatarUrl": "Profile Picture URL",
+      "expertise": "Expertise",
+      "interests": "Interests"
+    },
+    "placeholders": {
+      "avatarUrl": "https://example.com/avatar.jpg",
+      "expertise": "e.g., Frontend, Data Science",
+      "interests": "e.g., Career growth, JavaScript"
+    },
+    "role": {
+      "user": "Student",
+      "mentor": "Mentor"
+    },
+    "actions": {
+      "login": "Log in as {{role}}",
+      "signup": "Sign up as {{role}}"
+    }
+  },
+  "profile": {
+    "title": "Your profile",
+    "subtitle": "Update your personal information. You can connect backend later.",
+    "fields": {
+      "fullName": "Full Name",
+      "email": "Email",
+      "expertise": "Expertise",
+      "interests": "Interests"
+    },
+    "actions": {
+      "save": "Save changes",
+      "saving": "Saving...",
+      "cancel": "Cancel",
+      "continue": "Continue",
+      "logout": "Log out"
+    }
+  },
+  "dashboard": {
+    "sidebar": {
+      "title": "Navigation",
+      "mentors": "Mentors",
+      "activities": "Activities",
+      "studybooks": "Studybooks",
+      "home": "Main page",
+      "profile": "Profile"
+    },
+    "sections": {
+      "mentors": {
+        "title": "Mentors"
+      },
+      "activities": {
+        "title": "Activities"
+      },
+      "studybooks": {
+        "title": "Studybooks"
+      }
+    },
+    "content": {
+      "mentors": "Browse and connect with mentors from around the world.",
+      "activities": "View your mentorship activities and sessions.",
+      "studybooks": "Access your study materials and resources."
+    },
+    "mentors": {
+      "students": "students",
+      "about": "About",
+      "contacts": "Contacts",
+      "telegram": "Telegram",
+      "email": "Email"
+    },
+    "activities": {
+      "date": "Date",
+      "time": "Time",
+      "location": "Location",
+      "about": "About this activity",
+      "signup": "Register now"
+    },
+    "studybooks": {
+      "author": "Author",
+      "level": "Level",
+      "format": "Format",
+      "pages": "pages",
+      "summary": "Overview",
+      "topics": "Topics covered",
+      "openResource": "Open resource",
+      "formatLabel": "Delivered as {{format}} resource"
+    }
+  }
+}
+

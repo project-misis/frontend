@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Vibrant modern palette using soft contrast and Catppuccin-inspired hues */
+    --background: 240 17% 13%;  /* Deep, elegant navy (main BG) */
+    --foreground: 229 63% 96%;  /* Almost white for crisp contrast */
+
+    --card: 233 19% 19%;       /* Slightly lighter, pleasant card BG */
+    --card-foreground: 229 63% 94%;
+
+    --popover: 233 21% 20%;
+    --popover-foreground: 229 63% 96%;
+
+    --primary: 267 81% 80%;   /* Beautiful Catppuccin light mauve */
+    --primary-foreground: 240 21% 15%;
+
+    --secondary: 201 15% 40%; /* Cool gentle blue-gray as secondary */
+    --secondary-foreground: 229 63% 96%;
+
+    --muted: 237 14% 24%;
+    --muted-foreground: 229 22% 69%;
+
+    --accent: 189 76% 68%;    /* Vibrant sky blue for accents */
+    --accent-foreground: 233 19% 19%;
+
+    --destructive: 349 73% 66%; /* Soft, modern peachy red for errors */
+    --destructive-foreground: 229 63% 96%;
+
+    --border: 230 19% 25%;
+    --input: 233 19% 19%;
+    --ring: 267 84% 81%;
+
+    --radius: 0.75rem;
+
+    /* Catppuccin palette expansions for backgrounds and widget accents */
+    --catppuccin-rosewater: 10 57% 89%;
+    --catppuccin-flamingo: 0 61% 86%;
+    --catppuccin-pink: 318 73% 85%;
+    --catppuccin-mauve: 267 84% 81%;
+    --catppuccin-red: 349 73% 66%;
+    --catppuccin-maroon: 346 63% 74%;
+    --catppuccin-peach: 24 98% 65%;
+    --catppuccin-yellow: 38 92% 83%;
+    --catppuccin-green: 120 68% 72%;
+    --catppuccin-teal: 173 68% 66%;
+    --catppuccin-sky: 189 71% 73%;
+    --catppuccin-sapphire: 199 76% 69%;
+    --catppuccin-blue: 217 92% 76%;
+    --catppuccin-lavender: 232 97% 85%;
+
+    --sidebar-background: 233 19% 18%;
+    --sidebar-foreground: 229 63% 96%;
+    --sidebar-primary: 267 81% 80%;
+    --sidebar-primary-foreground: 233 19% 18%;
+    --sidebar-accent: 230 19% 25%;
+    --sidebar-accent-foreground: 229 63% 96%;
+    --sidebar-border: 228 19% 23%;
+    --sidebar-ring: 267 84% 81%;
+  }
+
+  .dark {
+    --background: 237 17% 12%;  /* Slightly richer, softer dark for dark mode */
+    --foreground: 229 63% 98%;
+    --card: 233 19% 19%;
+    --card-foreground: 229 63% 95%;
+    --popover: 233 21% 20%;
+    --popover-foreground: 229 63% 98%;
+    --primary: 267 81% 85%;
+    --primary-foreground: 233 19% 18%;
+    --secondary: 201 15% 44%;
+    --secondary-foreground: 229 63% 98%;
+    --muted: 237 11% 21%;
+    --muted-foreground: 229 22% 74%;
+    --accent: 192 81% 67%;
+    --accent-foreground: 233 19% 19%;
+    --destructive: 349 73% 66%;
+    --destructive-foreground: 229 63% 99%;
+    --border: 230 19% 23%;
+    --input: 230 19% 23%;
+    --ring: 267 84% 81%;
+    --sidebar-background: 233 19% 18%;
+    --sidebar-foreground: 229 63% 97%;
+    --sidebar-primary: 267 81% 80%;
+    --sidebar-primary-foreground: 233 19% 18%;
+    --sidebar-accent: 230 19% 25%;
+    --sidebar-accent-foreground: 229 63% 96%;
+    --sidebar-border: 228 19% 23%;
+    --sidebar-ring: 267 84% 81%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
