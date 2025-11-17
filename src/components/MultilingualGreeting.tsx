@@ -1,16 +1,11 @@
 import { useState, useEffect } from 'react';
 
 const greetings = [
-  { text: 'Hello', lang: 'English' },
-  { text: 'Bonjour', lang: 'Français' },
-  { text: 'Hola', lang: 'Español' },
-  { text: '你好', lang: '中文' },
-  { text: 'Привет', lang: 'Русский' },
-  { text: 'مرحبا', lang: 'العربية' },
-  { text: 'こんにちは', lang: '日本語' },
-  { text: 'Olá', lang: 'Português' },
-  { text: 'Namaste', lang: 'हिन्दी' },
-  { text: 'Hallo', lang: 'Deutsch' },
+  'Hello',
+  'Bonjour',
+  'Hola',
+  'Привет',
+  'Olá',
 ];
 
 export const MultilingualGreeting = () => {
@@ -24,11 +19,10 @@ export const MultilingualGreeting = () => {
   useEffect(() => {
     if (!isTyping) return;
 
-    const currentGreeting = greetings[currentIndex].text;
+    const currentGreeting = greetings[currentIndex];
 
     if (charIndex < currentGreeting.length) {
-      const char = currentGreeting[charIndex];
-      const delay = /[\u4e00-\u9fff\u0600-\u06ff\u3040-\u309f\u30a0-\u30ff\u0900-\u097f]/.test(char) ? 120 : 80;
+      const delay = 120;
 
       const timeout = setTimeout(() => {
         setDisplayedText(currentGreeting.slice(0, charIndex + 1));
