@@ -1,5 +1,5 @@
 import { Card } from './ui/card';
-import { MessageSquare, Video, BookOpen, Award } from 'lucide-react';
+import { Handshake, BookOpen, Calendar, Rotate3D } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 export const FeaturesSection = () => {
@@ -7,24 +7,24 @@ export const FeaturesSection = () => {
 
   const features = [
     {
-      icon: MessageSquare,
-      title: t('features.realTimeChat.title'),
-      description: t('features.realTimeChat.description'),
+      icon: Handshake,
+      title: t('features.mentors.title'),
+      description: t('features.mentors.description'),
     },
     {
-      icon: Video,
-      title: t('features.videoSessions.title'),
-      description: t('features.videoSessions.description'),
+      icon: Calendar,
+      title: t('features.activities.title'),
+      description: t('features.activities.description'),
     },
     {
       icon: BookOpen,
-      title: t('features.resourceLibrary.title'),
-      description: t('features.resourceLibrary.description'),
+      title: t('features.library.title'),
+      description: t('features.library.description'),
     },
     {
-      icon: Award,
-      title: t('features.achievementTracking.title'),
-      description: t('features.achievementTracking.description'),
+      icon: Rotate3D,
+      title: t('features.future.title'),
+      description: t('features.future.description'),
     },
   ];
 
@@ -45,7 +45,7 @@ export const FeaturesSection = () => {
           {features.map((feature, index) => {
             const Icon = feature.icon;
             return (
-              <Card 
+              <Card
                 key={index}
                 className="p-6 bg-card/50 backdrop-blur-sm border-primary/10 hover:border-primary/30 transition-all hover:shadow-lg hover:shadow-primary/5"
               >

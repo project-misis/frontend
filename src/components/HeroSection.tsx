@@ -65,20 +65,20 @@ export const HeroSection = () => {
           )}
         </div>
 
-        <div className="grid grid-cols-3 gap-8 pt-12 border-t border-primary/10">
-          <div className="space-y-2">
-            <div className="text-3xl font-bold text-primary font-mono">50+</div>
-            <div className="text-sm text-muted-foreground">{t('hero.countries')}</div>
-          </div>
-          <div className="space-y-2">
-            <div className="text-3xl font-bold text-primary font-mono">1000+</div>
-            <div className="text-sm text-muted-foreground">{t('hero.mentors')}</div>
-          </div>
-          <div className="space-y-2">
-            <div className="text-3xl font-bold text-primary font-mono">5000+</div>
-            <div className="text-sm text-muted-foreground">{t('hero.students')}</div>
-          </div>
-        </div>
+        {/*   <div className="grid grid-cols-3 gap-8 pt-12 border-t border-primary/10"> */}
+        {/*     <div className="space-y-2"> */}
+        {/*       <div className="text-3xl font-bold text-primary font-mono">50+</div> */}
+        {/*       <div className="text-sm text-muted-foreground">{t('hero.countries')}</div> */}
+        {/*     </div> */}
+        {/*     <div className="space-y-2"> */}
+        {/*       <div className="text-3xl font-bold text-primary font-mono">1000+</div> */}
+        {/*       <div className="text-sm text-muted-foreground">{t('hero.mentors')}</div> */}
+        {/*     </div> */}
+        {/*     <div className="space-y-2"> */}
+        {/*       <div className="text-3xl font-bold text-primary font-mono">5000+</div> */}
+        {/*       <div className="text-sm text-muted-foreground">{t('hero.students')}</div> */}
+        {/*     </div> */}
+        {/*   </div> */}
       </div>
 
       <AuthDialog open={openUserAuth} onOpenChange={setOpenUserAuth} role="user" />

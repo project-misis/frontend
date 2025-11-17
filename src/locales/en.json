@@ -1,10 +1,10 @@
 {
   "hero": {
-    "badge": "Global Mentorship Network",
+    "badge": "MISIS Buddy System",
     "titlePart1": "Connect with",
     "titleHighlight": "mentors",
-    "titlePart2": "from around the world",
-    "description": "Bridge cultures, share knowledge, and grow together. Our platform connects international students with experienced mentors across borders.",
+    "titlePart2": "at NITU MISIS",
+    "description": "Settle into life in Russia and at our university. This platform connects you with experienced student mentors to help with studies and daily challenges.",
     "findMentor": "Find a Mentor",
     "becomeMentor": "Become a Mentor",
     "viewProfile": "View Profile",
@@ -13,53 +13,54 @@
     "students": "Students"
   },
   "features": {
-    "titlePart1": "Everything you need to",
-    "titleHighlight": "succeed",
-    "subtitle": "Powerful features designed to make mentorship effective and accessible",
-    "realTimeChat": {
-      "title": "Real-time Chat",
-      "description": "Connect instantly with mentors through our secure messaging platform."
+    "titlePart1": "Everything you need for a",
+    "titleHighlight": "smooth start",
+    "subtitle": "Powerful tools and resources to help you feel at home at MISIS and in Moscow.",
+    "mentors": {
+      "title": "Personal Mentorship",
+      "description": "Browse profiles of experienced MISIS students and connect with a mentor who matches your interests and needs."
     },
-    "videoSessions": {
-      "title": "Video Sessions",
-      "description": "Schedule and join video calls for face-to-face mentorship sessions."
+    "activities": {
+      "title": "Community Events",
+      "description": "Join campus tours, cultural workshops, and social meetups. It's the best way to make new friends and explore Moscow."
     },
-    "resourceLibrary": {
+    "library": {
       "title": "Resource Library",
-      "description": "Access curated learning materials and guides from experienced mentors."
+      "description": "Access a collection of guides, checklists, and articles covering everything from visa paperwork to the best places for [translate:шаурма] (shaurma) in town."
     },
-    "achievementTracking": {
-      "title": "Achievement Tracking",
-      "description": "Monitor your progress and celebrate milestones with your mentor."
+    "future": {
+      "title": "What's Next?",
+      "description": "We're constantly working to improve this platform."
     }
+
   },
   "notFound": {
     "title": "404",
-    "message": "Oops! Page not found",
-    "returnHome": "Return to Home"
+    "message": "Oops! It seems you've taken a wrong turn.",
+    "returnHome": "Return to Home Page"
   },
   "auth": {
-    "title": "Welcome, {{role}}",
-    "subtitle": "Log in or create an account to continue",
+    "title": "Welcome to the MISIS Buddy System, {{role}}",
+    "subtitle": "Log in or create an account to get started.",
     "tabs": {
       "login": "Log in",
       "signup": "Sign up"
     },
     "fields": {
       "fullName": "Full Name",
-      "email": "Email",
+      "email": "University Email",
       "password": "Password",
       "avatarUrl": "Profile Picture URL",
-      "expertise": "Expertise",
-      "interests": "Interests"
+      "expertise": "I can help with...",
+      "interests": "My hobbies are..."
     },
     "placeholders": {
       "avatarUrl": "https://example.com/avatar.jpg",
-      "expertise": "e.g., Frontend, Data Science",
-      "interests": "e.g., Career growth, JavaScript"
+      "expertise": "e.g., Physics, Finding apartments, Russian language",
+      "interests": "e.g., Soccer, Video games, Museums"
     },
     "role": {
-      "user": "Student",
+      "user": "International Student",
       "mentor": "Mentor"
     },
     "actions": {
@@ -68,50 +69,50 @@
     }
   },
   "profile": {
-    "title": "Your profile",
-    "subtitle": "Update your personal information. You can connect backend later.",
+    "title": "Your Profile",
+    "subtitle": "Update your personal information so others can get to know you.",
     "fields": {
       "fullName": "Full Name",
       "email": "Email",
-      "expertise": "Expertise",
-      "interests": "Interests"
+      "expertise": "Areas of Expertise",
+      "interests": "Hobbies & Interests"
     },
     "actions": {
-      "save": "Save changes",
+      "save": "Save Changes",
       "saving": "Saving...",
       "cancel": "Cancel",
       "continue": "Continue",
-      "logout": "Log out"
+      "logout": "Log Out"
     }
   },
   "dashboard": {
     "sidebar": {
-      "title": "Navigation",
+      "title": "Menu",
       "mentors": "Mentors",
-      "activities": "Activities",
-      "studybooks": "Studybooks",
-      "home": "Main page",
+      "activities": "Events",
+      "studybooks": "Guides",
+      "home": "Home",
       "profile": "Profile"
     },
     "sections": {
       "mentors": {
-        "title": "Mentors"
+        "title": "Find a Mentor"
       },
       "activities": {
-        "title": "Activities"
+        "title": "Upcoming Events"
       },
       "studybooks": {
-        "title": "Studybooks"
+        "title": "Helpful Guides"
       }
     },
     "content": {
-      "mentors": "Browse and connect with mentors from around the world.",
-      "activities": "View your mentorship activities and sessions.",
-      "studybooks": "Access your study materials and resources."
+      "mentors": "Browse and connect with MISIS student mentors.",
+      "activities": "Check out university events and activities for international students.",
+      "studybooks": "Find guides and resources to help you adapt to life in Moscow."
     },
     "mentors": {
-      "students": "students",
-      "about": "About",
+      "students": "mentees",
+      "about": "About Me",
       "contacts": "Contacts",
       "telegram": "Telegram",
       "email": "Email"
@@ -120,18 +121,18 @@
       "date": "Date",
       "time": "Time",
       "location": "Location",
-      "about": "About this activity",
-      "signup": "Register now"
+      "about": "About This Event",
+      "signup": "Sign Up"
     },
     "studybooks": {
       "author": "Author",
-      "level": "Level",
+      "level": "Audience",
       "format": "Format",
       "pages": "pages",
-      "summary": "Overview",
-      "topics": "Topics covered",
-      "openResource": "Open resource",
-      "formatLabel": "Delivered as {{format}} resource"
+      "summary": "Summary",
+      "topics": "Topics Covered",
+      "openResource": "Open Guide",
+      "formatLabel": "Provided as a {{format}}"
     }
   }
 }
