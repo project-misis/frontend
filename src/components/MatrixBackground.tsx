@@ -10,12 +10,29 @@ export const MatrixBackground = () => {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
+    // Use logical (CSS) pixels for layout and scale for high-DPI / mobile screens
+    let logicalWidth = window.innerWidth;
+    let logicalHeight = window.innerHeight;
     const cellSize = 16;
-    const cols = Math.floor(canvas.width / cellSize);
-    const rows = Math.floor(canvas.height / cellSize);
+    let cols = 0;
+    let rows = 0;
+
+    const updateCanvasSize = () => {
+      logicalWidth = window.innerWidth;
+      logicalHeight = window.innerHeight;
+
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = logicalWidth * dpr;
+      canvas.height = logicalHeight * dpr;
+
+      // Reset transform then scale so drawing units stay in CSS pixels
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+      cols = Math.floor(logicalWidth / cellSize);
+      rows = Math.floor(logicalHeight / cellSize);
+    };
+
+    updateCanvasSize();
 
     const MAX_ACTIVE = 28;
 
@@ -91,7 +108,10 @@ export const MatrixBackground = () => {
       const dt = Math.min(0.05, (ts - lastTs) / 1000);
       lastTs = ts;
 
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      // Clear in logical coordinate space (CSS pixels)
+      ctx.clearRect(0, 0, logicalWidth, logicalHeight);
+
+      const isMobileViewport = logicalWidth < 768;
 
       for (let i = sparks.length - 1; i >= 0; i--) {
         const s = sparks[i];
@@ -126,9 +146,11 @@ export const MatrixBackground = () => {
         const centerY = s.y * cellSize + cellSize / 2;
         const radius = drawSize / 2;
 
-        // Stronger blur for softer glow
+        // Stronger blur for softer glow, tuned for mobile & high-DPI screens
         ctx.globalAlpha = alpha;
-        ctx.filter = `blur(${Math.max(6, radius * 2)}px)`;
+        const blurBase = Math.min(24, Math.max(8, radius * 1.4));
+        const blurAmount = isMobileViewport ? blurBase + 4 : blurBase;
+        ctx.filter = `blur(${blurAmount}px)`;
         ctx.fillStyle = s.color;
         ctx.beginPath();
         ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
@@ -146,12 +168,11 @@ export const MatrixBackground = () => {
     rafId = requestAnimationFrame(drawFrame);
 
     const clearIntervalId = setInterval(() => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.clearRect(0, 0, logicalWidth, logicalHeight);
     }, 5000);
 
     const handleResize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      updateCanvasSize();
     };
 
     window.addEventListener('resize', handleResize);
