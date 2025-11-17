@@ -45,7 +45,6 @@ export const MultilingualGreeting = () => {
       setCharIndex(0);
       setDisplayedText('');
       setCurrentIndex((prev) => (prev + 1) % greetings.length);
-      // Fade in and start typing
       setTimeout(() => {
         setOpacity(1);
         setIsTyping(true);
