@@ -34,14 +34,25 @@ export const HeroSection = () => {
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           {user ? (
-            <Button
-              size="lg"
-              className="group bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20"
-              onClick={() => navigate('/profile')}
-            >
-              {t('hero.viewProfile')}
-              <User className="ml-2 w-4 h-4 group-hover:scale-110 transition-transform" />
-            </Button>
+            <>
+              <Button
+                size="lg"
+                variant="outline"
+                className="group border-primary/30 text-primary hover:text-primary transition-colors duration-200 hover:bg-primary/5 hover:border-primary/50 hover:shadow-md hover:shadow-primary/10"
+                onClick={() => navigate('/profile')}
+              >
+                <User className="mr-2 w-4 h-4 group-hover:scale-110 transition-transform" />
+                {t('hero.viewProfile')}
+              </Button>
+              <Button
+                size="lg"
+                className="group bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20"
+                onClick={() => navigate('/dashboard')}
+              >
+                {t('profile.actions.continue')}
+                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </>
           ) : (
             <>
               <Button
