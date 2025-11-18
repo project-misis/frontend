@@ -90,7 +90,7 @@
       "title": "Menu",
       "mentors": "Mentors",
       "activities": "Events",
-      "studybooks": "Guides",
+      "studybooks": "Studybooks",
       "home": "Home",
       "profile": "Profile"
     },
@@ -102,13 +102,13 @@
         "title": "Upcoming Events"
       },
       "studybooks": {
-        "title": "Helpful Guides"
+        "title": "Studybooks & Toolkits"
       }
     },
     "content": {
       "mentors": "Browse and connect with MISIS student mentors.",
       "activities": "Check out university events and activities for international students.",
-      "studybooks": "Find guides and resources to help you adapt to life in Moscow."
+      "studybooks": "Discover curated studybooks and learning kits tailored for international students."
     },
     "mentors": {
       "students": "mentees",
@@ -127,12 +127,12 @@
     "studybooks": {
       "author": "Author",
       "level": "Audience",
-      "format": "Format",
       "pages": "pages",
       "summary": "Summary",
       "topics": "Topics Covered",
-      "openResource": "Open Guide",
-      "formatLabel": "Provided as a {{format}}"
+      "openResource": "Open Studybook",
+      "language": "Language",
+      "languageShort": "{{language}}"
     }
   }
 }

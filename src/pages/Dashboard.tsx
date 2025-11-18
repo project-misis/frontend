@@ -44,7 +44,6 @@ type Mentor = {
   expertise: string;
   description: string;
   avatarUrl: string;
-  students: number;
   telegram: string;
   email: string;
 };
@@ -52,63 +51,57 @@ type Mentor = {
 const MENTORS: Mentor[] = [
   {
     id: '1',
-    name: 'Sarah Chen',
-    expertise: 'Frontend Development',
-    description: 'Senior React developer with 8+ years of experience. Specialized in modern web technologies and UI/UX design.',
-    avatarUrl: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah',
-    students: 124,
-    telegram: '@sarahchen_dev',
-    email: 'sarah.chen@example.com',
+    name: 'Алексей Смирнов',
+    expertise: 'Программирование на C++',
+    description: 'Студент МИСИС, увлечён конкурентным программированием, помогает новичкам освоить основы и алгоритмы.',
+    avatarUrl: 'https://api.dicebear.com/9.x/avataaars/svg?skinColor=ffdbb4&seed=Lesha_s',
+    telegram: '@aleksey_cpp',
+    email: 'alexey.smirnov@misis.ru',
   },
   {
     id: '2',
-    name: 'Michael Rodriguez',
-    expertise: 'Data Science',
-    description: 'Data scientist and ML engineer. Expert in Python, TensorFlow, and building scalable data pipelines.',
-    avatarUrl: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Michael',
-    students: 98,
-    telegram: '@mrodriguez_ds',
-    email: 'michael.rodriguez@example.com',
+    name: 'Мария Иванова',
+    expertise: 'Журналистика и SMM',
+    description: 'Активистка студенческого медиа-центра МИСИС, ведёт курсы по созданию текстов и продвижению в соцсетях.',
+    avatarUrl: 'https://api.dicebear.com/9.x/avataaars/svg?skinColor=ffdbb4&seed=MariaIvan',
+    telegram: '@maria_journal',
+    email: 'm.ivanova@misis.ru',
   },
   {
     id: '3',
-    name: 'Emma Thompson',
-    expertise: 'Backend Development',
-    description: 'Full-stack engineer specializing in Node.js, Go, and cloud architecture. AWS certified solutions architect.',
-    avatarUrl: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Emma',
-    students: 156,
-    telegram: '@emmathompson_dev',
-    email: 'emma.thompson@example.com',
+    name: 'Дмитрий Орлов',
+    expertise: 'Web-разработка',
+    description: 'Разрабатывает сайты и приложения, консультирует студентов по JavaScript, React и базам данных.',
+    avatarUrl: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Abcd',
+    telegram: '@orlov_web',
+    email: 'd.orlov@misis.ru',
   },
   {
     id: '4',
-    name: 'James Park',
-    expertise: 'Mobile Development',
-    description: 'iOS and Android developer with expertise in React Native and Flutter. Published 20+ apps on app stores.',
-    avatarUrl: 'https://api.dicebear.com/7.x/avataaars/svg?seed=James',
-    students: 87,
-    telegram: '@jamespark_mobile',
-    email: 'james.park@example.com',
+    name: 'Екатерина Васильева',
+    expertise: 'Маркетинг',
+    description: 'Организатор событий и студенческих акций, разбирается в digital-маркетинге, помогает приобрести soft skills.',
+    avatarUrl: 'https://api.dicebear.com/7.x/avataaars/svg?seed=L',
+    telegram: '@ekaterina_marketing',
+    email: 'ekaterina.vasilieva@misis.ru',
   },
   {
     id: '5',
-    name: 'Lisa Anderson',
-    expertise: 'DevOps & Cloud',
-    description: 'DevOps engineer with expertise in Kubernetes, Docker, and CI/CD pipelines. Helping teams scale infrastructure.',
-    avatarUrl: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Lisa',
-    students: 112,
-    telegram: '@lisaanderson_devops',
-    email: 'lisa.anderson@example.com',
+    name: 'Михаил Соколов',
+    expertise: 'DevOps и облака',
+    description: 'Специалист по CI/CD, Docker и облачным решениям, ведёт практики по инфраструктуре.',
+    avatarUrl: 'https://api.dicebear.com/7.x/avataaars/svg?seed=ABCDEFGH',
+    telegram: '@mikhail_devops',
+    email: 'm.sokolov@misis.ru',
   },
   {
     id: '6',
-    name: 'David Kim',
-    expertise: 'Cybersecurity',
-    description: 'Security expert with 10+ years in penetration testing and secure coding practices. CISSP certified.',
-    avatarUrl: 'https://api.dicebear.com/7.x/avataaars/svg?seed=David',
-    students: 76,
-    telegram: '@davidkim_security',
-    email: 'david.kim@example.com',
+    name: 'Анна Кузнецова',
+    expertise: 'Психология',
+    description: 'Студентка факультета социальных наук, проводит тренинги по стресс-менеджменту и развитию креативности.',
+    avatarUrl: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Anna',
+    telegram: '@anna_psy',
+    email: 'a.kuznetsova@misis.ru',
   },
 ];
 
@@ -128,42 +121,55 @@ type ActivityItem = {
 const ACTIVITIES: ActivityItem[] = [
   {
     id: 'a1',
-    title: 'Cross-Cultural Hackathon',
-    focus: 'Innovation Sprint',
+    title: 'Студенческий хакатон MISIS',
+    focus: 'IT и инновации',
     description:
-      '48-hour online hackathon pairing international students with seasoned mentors to build impactful prototypes addressing global education challenges.',
-    date: 'March 22–24, 2026',
-    time: '09:00 – 21:00 GMT',
-    location: 'Remote • GatherTown',
-    host: 'Global Mentorship Alliance',
-    signupLink: 'https://example.com/events/hackathon',
-    contactEmail: 'events@mentorship.io',
+      '48-часовой хакатон с командным программированием — создаём прототипы для реальных задач университета и компаний-партнёров.',
+    date: '12–14 апреля 2026',
+    time: '10:00 – 22:00 MSK',
+    location: 'МИСИС, Москва (ауд. 301) + онлайн',
+    host: 'Центр цифровых решений МИСИС',
+    signupLink: 'https://misis.ru/events/hackathon',
+    contactEmail: 'hackathon@misis.ru',
   },
   {
     id: 'a2',
-    title: 'Career Accelerator Workshop',
-    focus: 'Job Market',
+    title: 'Воркшоп «Карьерный старт»',
+    focus: 'Трудоустройство',
     description:
-      'Interactive workshop covering portfolio reviews, live mock interviews, and market insights for tech roles across Europe, Asia, and North America.',
-    date: 'April 12, 2026',
-    time: '15:00 – 18:30 CET',
-    location: 'Hybrid • Berlin & Zoom',
-    host: 'International Career Lab',
-    signupLink: 'https://example.com/events/career-accelerator',
-    contactEmail: 'careerlab@mentorship.io',
+      'Практический воркшоп: разбор резюме, пробные собеседования и советы для начинающих специалистов в IT и инженерии.',
+    date: '25 апреля 2026',
+    time: '15:30 – 18:00 MSK',
+    location: 'МИСИС, Москва (кафе Loft)',
+    host: 'Студенческий совет МИСИС',
+    signupLink: 'https://misis.ru/events/career',
+    contactEmail: 'career@misis.ru',
   },
   {
     id: 'a3',
-    title: 'Monthly Mentor Roundtable',
-    focus: 'Community',
+    title: 'Круглый стол: Университет и город',
+    focus: 'Сообщество',
     description:
-      'Roundtable discussion where mentors share best practices, success stories, and actionable frameworks for supporting intercultural mentee journeys.',
-    date: 'First Thursday of every month',
-    time: '19:00 – 20:30 JST',
-    location: 'Remote • Google Meet',
-    host: 'Mentor Council',
-    signupLink: 'https://example.com/events/roundtable',
-    contactEmail: 'council@mentorship.io',
+      'Открытая дискуссия с экспертами: как студенты МИСИС меняют город, волонтёрские инициативы, проекты для школьников и горожан.',
+    date: 'Первая среда месяца',
+    time: '17:00 – 19:00 MSK',
+    location: 'МИСИС, Москва (зал библиотека) + Zoom',
+    host: 'Молодёжный центр МИСИС',
+    signupLink: 'https://misis.ru/events/community',
+    contactEmail: 'community@misis.ru',
+  },
+  {
+    id: 'a4',
+    title: 'Киновечер «Фильм на большой перемене»',
+    focus: 'Досуг и общение',
+    description:
+      'Неофициальный киновечер для студентов: горячий чай, любимый фильм на проекторе и приятная компания. После просмотра — обсуждение фильма.',
+    date: '29 апреля 2026',
+    time: '18:30 – 21:30 MSK',
+    location: 'МИСИС, Москва (Читальный зал, корпус А)',
+    host: 'Студенческий культурный клуб',
+    signupLink: 'https://misis.ru/events/movie-night',
+    contactEmail: 'cultureclub@misis.ru',
   },
 ];
 
@@ -172,53 +178,85 @@ type Studybook = {
   title: string;
   author: string;
   summary: string;
-  level: 'Beginner' | 'Intermediate' | 'Advanced';
   topics: string[];
   format: 'PDF' | 'Notion' | 'Slide Deck' | 'Interactive';
   pages: number;
-  coverUrl: string;
+  language: string;
   resourceUrl: string;
 };
 
 const STUDYBOOKS: Studybook[] = [
   {
     id: 's1',
-    title: 'Global Product Design Playbook',
-    author: 'Dr. Ana Silva',
+    title: 'Сборник задач по аналитической геометрии (RU)',
+    author: 'Кафедра высшей математики МИСИС',
     summary:
-      'Comprehensive guide to building inclusive digital products for multicultural audiences, covering research, design systems, and localization tactics.',
-    level: 'Advanced',
-    topics: ['UX Research', 'Localization', 'Design Systems'],
+      'Полностью русскоязычный сборник задач и кратких конспектов по прямым, плоскостям и квадрикам с примерами оформления решений.',
+    topics: ['Геометрия', 'Линейная алгебра', 'Практика'],
     format: 'PDF',
-    pages: 186,
-    coverUrl: 'https://images.unsplash.com/photo-1523475472560-d2df97ec485c?auto=format&fit=crop&w=800&q=80',
-    resourceUrl: 'https://example.com/resources/design-playbook.pdf',
+    pages: 210,
+    language: 'Русский',
+    resourceUrl: 'https://example.com/resources/russian-analytic-geometry',
   },
   {
     id: 's2',
-    title: 'Data Storytelling Toolkit',
-    author: 'Mentorship Analytics Guild',
+    title: 'Методичка по физике твёрдого тела (RU)',
+    author: 'Проф. А. П. Кулаков',
     summary:
-      'Interactive Notion workspace with templates, dashboards, and workshops for turning raw data into compelling narratives for mentees and stakeholders.',
-    level: 'Intermediate',
-    topics: ['Data Visualization', 'Narrative Design', 'Workshops'],
-    format: 'Notion',
-    pages: 74,
-    coverUrl: 'https://images.unsplash.com/photo-1523473827534-08621aa93b3b?auto=format&fit=crop&w=800&q=80',
-    resourceUrl: 'https://example.com/resources/data-storytelling',
+      'Подробные лекционные заметки и расчётные работы по кристаллографии, тепловым явлениям и зонной теории. Русский текст, формулы TeX.',
+    topics: ['Физика', 'Материаловедение', 'Расчёты'],
+    format: 'PDF',
+    pages: 168,
+    language: 'Русский',
+    resourceUrl: 'https://example.com/resources/russian-solid-state',
   },
   {
     id: 's3',
-    title: 'Remote Mentorship Starter Kit',
-    author: 'Global Mentorship Alliance',
+    title: 'Практикум по дата-анализу (EN)',
+    author: 'MISIS Data Lab',
     summary:
-      'Step-by-step toolkit for launching remote mentorship cohorts, including onboarding guides, session agendas, and cultural sensitivity checklists.',
-    level: 'Beginner',
-    topics: ['Remote Work', 'Program Design', 'Cultural Intelligence'],
+      'Англоязычные ноутбуки с лабораторными по Python, pandas и визуализации данных для инженерных кейсов металлургии.',
+    topics: ['Python', 'Data Analysis', 'Visualization'],
+    format: 'PDF',
+    pages: 142,
+    language: 'English',
+    resourceUrl: 'https://example.com/resources/english-data-lab',
+  },
+  {
+    id: 's4',
+    title: 'Advanced Materials Modeling (EN)',
+    author: 'Center for Computational Materials',
+    summary:
+      'Учебник на английском с пошаговыми примерами по DFT, молекулярной динамике и построению моделей сплавов в Quantum ESPRESSO.',
+    topics: ['Simulation', 'Materials', 'DFT'],
+    format: 'Slide Deck',
+    pages: 96,
+    language: 'English',
+    resourceUrl: 'https://example.com/resources/english-materials-modeling',
+  },
+  {
+    id: 's5',
+    title: 'Cours accéléré de chimie inorganique (FR)',
+    author: 'Département francophone MISIS',
+    summary:
+      'Конспекты и задачи на французском языке по координационным соединениям, диаграммам фаз и электрохимическим процессам.',
+    topics: ['Chimie', 'Matériaux', 'Exercices'],
+    format: 'PDF',
+    pages: 120,
+    language: 'Français',
+    resourceUrl: 'https://example.com/resources/french-inorganic',
+  },
+  {
+    id: 's6',
+    title: 'Atelier IA pour ingénieurs (FR)',
+    author: 'Comité francophone MISIS',
+    summary:
+      'Лабораторные на французском языке по применению PyTorch и FastAI к технологическим данным: классификация дефектов и прогноз износа.',
+    topics: ['Intelligence artificielle', 'PyTorch', 'Industrie'],
     format: 'Interactive',
-    pages: 92,
-    coverUrl: 'https://images.unsplash.com/photo-1523473827534-48202b6cdb62?auto=format&fit=crop&w=800&q=80',
-    resourceUrl: 'https://example.com/resources/mentorship-starter-kit',
+    pages: 84,
+    language: 'Français',
+    resourceUrl: 'https://example.com/resources/french-ai-workshop',
   },
 ];
 
@@ -263,8 +301,8 @@ const DashboardContent = () => {
 
   return (
     <>
-      <Sidebar 
-        collapsible="icon" 
+      <Sidebar
+        collapsible="icon"
         className="border-primary/10 bg-card/60 backdrop-blur-sm"
         variant="inset"
       >
@@ -354,7 +392,6 @@ const DashboardContent = () => {
                             <span>{mentor.expertise}</span>
                           </div>
                           <div className="flex items-center gap-3 mt-2 text-xs text-muted-foreground">
-                            <span>{mentor.students} {t('dashboard.mentors.students')}</span>
                           </div>
                         </div>
                       </div>
@@ -424,19 +461,16 @@ const DashboardContent = () => {
                   >
                     <CardHeader className="pb-4">
                       <div className="flex items-start gap-4">
-                        <div className="relative w-16 h-20 rounded-lg overflow-hidden border border-primary/20 shadow-sm">
-                          <img
-                            src={book.coverUrl}
-                            alt={book.title}
-                            className="absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                          />
+                        <div className="w-16 h-16 rounded-xl border border-primary/20 bg-primary/10 flex items-center justify-center text-primary shadow-sm">
+                          <BookOpen className="w-8 h-8" />
                         </div>
                         <div className="flex-1 min-w-0 space-y-2">
                           <CardTitle className="text-lg leading-tight line-clamp-2">{book.title}</CardTitle>
                           <div className="text-xs text-muted-foreground">{book.author}</div>
                           <div className="flex flex-wrap gap-2 text-xs text-primary">
-                            <span className="rounded-full bg-primary/10 px-3 py-1">{book.level}</span>
-                            <span className="rounded-full bg-primary/10 px-3 py-1">{book.format}</span>
+                            <span className="rounded-full bg-primary/10 px-3 py-1">
+                              {t('dashboard.studybooks.languageShort', { language: book.language })}
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -474,7 +508,6 @@ const DashboardContent = () => {
                           {selectedItem.data.expertise}
                         </DialogDescription>
                         <div className="mt-2 text-sm text-muted-foreground">
-                          {selectedItem.data.students} {t('dashboard.mentors.students')}
                         </div>
                       </div>
                     </div>
@@ -588,28 +621,21 @@ const DashboardContent = () => {
                 <>
                   <DialogHeader>
                     <div className="flex flex-col gap-4 sm:flex-row">
-                      <div className="relative w-full sm:w-36 h-48 rounded-xl overflow-hidden border border-primary/20 shadow-sm">
-                        <img
-                          src={selectedItem.data.coverUrl}
-                          alt={selectedItem.data.title}
-                          className="absolute inset-0 h-full w-full object-cover"
-                        />
+                      <div className="w-full sm:w-36 h-48 rounded-xl border border-primary/20 bg-primary/5 flex items-center justify-center text-primary shadow-sm">
+                        <BookOpen className="w-12 h-12" />
                       </div>
-                      <div className="flex-1 space-y-3">
+                        <div className="flex-1 space-y-3">
                         <DialogTitle className="text-2xl leading-tight">{selectedItem.data.title}</DialogTitle>
                         <DialogDescription className="text-sm text-muted-foreground">
                           {t('dashboard.studybooks.author')}: <span className="text-foreground">{selectedItem.data.author}</span>
                         </DialogDescription>
                         <div className="flex flex-wrap gap-2 text-xs text-primary">
                           <span className="rounded-full bg-primary/10 px-3 py-1">
-                            {t('dashboard.studybooks.level')}: {selectedItem.data.level}
-                          </span>
-                          <span className="rounded-full bg-primary/10 px-3 py-1">
-                            {t('dashboard.studybooks.format')}: {selectedItem.data.format}
-                          </span>
-                          <span className="rounded-full bg-primary/10 px-3 py-1">
                             {selectedItem.data.pages} {t('dashboard.studybooks.pages')}
                           </span>
+                            <span className="rounded-full bg-primary/10 px-3 py-1">
+                              {t('dashboard.studybooks.language')}: {selectedItem.data.language}
+                            </span>
                         </div>
                       </div>
                     </div>
@@ -646,7 +672,7 @@ const DashboardContent = () => {
                       </Button>
                       <div className="inline-flex items-center gap-2 text-sm text-muted-foreground">
                         <BookMarked className="w-4 h-4 text-primary" />
-                        {t('dashboard.studybooks.formatLabel', { format: selectedItem.data.format })}
+                        {selectedItem.data.format}
                       </div>
                     </div>
                   </div>
@@ -682,4 +708,3 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
-
