@@ -321,7 +321,7 @@ const DashboardContent = () => {
           <SidebarTrigger className="-ml-1" />
           <div className="flex-1" />
         </header>
-        <main className="flex-1 overflow-y-auto p-4 md:p-8">
+        <main className="flex-1 min-h-0 overflow-y-auto p-4 md:p-8">
           <div className="max-w-7xl mx-auto w-full">
             <div className="mb-6 md:mb-8">
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-2">
@@ -670,11 +670,11 @@ const Dashboard = () => {
   }
 
   return (
-    <div className="h-screen relative overflow-hidden">
+    <div className="fixed inset-0 overflow-hidden">
       <MatrixBackground />
       <LanguageSwitcher />
-      
-      <SidebarProvider defaultOpen={true}>
+
+      <SidebarProvider defaultOpen={true} className="relative z-10 flex h-full">
         <DashboardContent />
       </SidebarProvider>
     </div>
