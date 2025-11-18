@@ -359,7 +359,7 @@ const DashboardContent = () => {
           <SidebarTrigger className="-ml-1" />
           <div className="flex-1" />
         </header>
-        <main className="flex-1 min-h-0 overflow-y-auto p-4 md:p-8">
+        <main className="dashboard-scroll flex-1 min-h-0 overflow-y-auto p-4 md:p-8">
           <div className="max-w-7xl mx-auto w-full">
             <div className="mb-6 md:mb-8">
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-2">
@@ -491,7 +491,7 @@ const DashboardContent = () => {
       <Dialog open={!!selectedItem} onOpenChange={(open) => !open && setSelectedItem(null)}>
         <DialogContent className="bg-background/85 backdrop-blur-sm border-primary/20 max-w-2xl max-h-[85vh] overflow-hidden p-0">
           {selectedItem && (
-            <div className="flex flex-col gap-4 p-6 overflow-y-auto">
+            <div className="dashboard-scroll flex flex-col gap-4 p-6 overflow-y-auto">
               {selectedItem.type === 'mentor' && (
                 <>
                   <DialogHeader>
