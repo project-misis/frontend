@@ -17,19 +17,19 @@
     "titleHighlight": "smooth start",
     "subtitle": "Powerful tools and resources to help you feel at home at MISIS and in Moscow.",
     "mentors": {
-      "title": "Personal Mentorship",
+      "title": "Mentors",
       "description": "Browse profiles of experienced MISIS students and connect with a mentor who matches your interests and needs."
     },
     "activities": {
-      "title": "Community Events",
+      "title": "Events",
       "description": "Join campus tours, cultural workshops, and social meetups. It's the best way to make new friends and explore Moscow."
     },
     "library": {
-      "title": "Resource Library",
-      "description": "Access a collection of guides, checklists, and articles covering everything from visa paperwork to the best places for [translate:шаурма] (shaurma) in town."
+      "title": "Library",
+      "description": "Access curated MISIS course readers, syllabi, and practice packs so you always have class-ready materials in one place."
     },
     "future": {
-      "title": "What's Next?",
+      "title": "Future",
       "description": "We're constantly working to improve this platform."
     }
 
